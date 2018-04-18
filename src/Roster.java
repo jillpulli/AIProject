@@ -43,7 +43,7 @@ public class Roster {
         String attributes = "";
 
         for(int i = 0; i < charList.size(); i++) {
-            attributes += charList.get(i).getName() + " has attributes: " + "eye color " + charList.get(i).getEye() + " hair color: " + charList.get(i).getHair() + " shirt color: " + charList.get(i).getShirt() + " gender: " + charList.get(i).getGender() + "\n";
+            attributes += charList.get(i).getName() + " has attributes: " + "eye color " + charList.get(i).getEye() + ", hair color: " + charList.get(i).getHair() + ", shirt color: " + charList.get(i).getShirt() + ", and gender: " + charList.get(i).getGender() + "\n";
 
         }
         return attributes;
@@ -54,7 +54,7 @@ public class Roster {
         for(int i = 0; i< charList.size(); i++) {
 
             if(charList.get(i).isMyCharacter()){
-                myChar += charList.get(i).getName() + " has attributes: " + "eye color " + charList.get(i).getEye() + " hair color: " + charList.get(i).getHair() + " shirt color: " + charList.get(i).getShirt() + " gender: " + charList.get(i).getGender() + "\n";
+                myChar += charList.get(i).getName() + " has attributes: " + "eye color " + charList.get(i).getEye() + ", hair color: " + charList.get(i).getHair() + ", shirt color: " + charList.get(i).getShirt() + ", and gender: " + charList.get(i).getGender() + "\n";
             }
         }
         return myChar;
