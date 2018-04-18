@@ -3,7 +3,9 @@ package src;
 import java.security.Key;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.Set;
+import java.util.Random;
 
 public class AI {
     Roster aiRoster;
@@ -29,8 +31,10 @@ public class AI {
     //returns the best question to ask user based off of lowest heuristic value
     public String bestQuestion(){
         Integer lowestHval = 100;
+        ArrayList<String> questions = new ArrayList<>();
         String question ="";
         Iterator itty = brain.values().iterator();
+
         while(itty.hasNext()){
             Integer inty = (Integer)itty.next();
             if(inty < lowestHval){
@@ -39,10 +43,18 @@ public class AI {
         }
         for(String key: brain.keySet()) {
             if (brain.get(key).equals(lowestHval)) {
-                question = key;
+                questions.add(key);
             }
         }
-        return question;
+
+        if (questions.size() > 1) {
+            Random r = new Random();
+            int index = r.nextInt(questions.size());
+            return questions.get(index);
+        }
+        else {
+            return questions.get(0);
+        }
     }
 
     public static void main(String args[]) {
