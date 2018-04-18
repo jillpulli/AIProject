@@ -19,9 +19,41 @@ public class Roster {
         charList.add(ch);
     }
 
-    public void removeChar(Character ch){
+    public void removeChar(int ch){
 
         charList.remove(ch);
+    }
+
+    public void removeCharWithShirt(String shirt){
+        for (int i = 0; i < charList.size(); i++) {
+            if(charList.get(i).isShirt(shirt)){
+                charList.remove(i);
+            }
+        }
+    }
+
+    public void removeCharWithGender(String gender){
+        for (int i = 0; i < charList.size(); i++) {
+            if(charList.get(i).isGender(gender)){
+                charList.remove(i);
+            }
+        }
+    }
+
+    public void removeCharWithEyes(String eyes){
+        for (int i = 0; i < charList.size(); i++) {
+            if(charList.get(i).isEye(eyes)){
+                charList.remove(i);
+            }
+        }
+    }
+
+    public void removeCharWithHair(String hair){
+        for (int i = 0; i < charList.size(); i++) {
+            if(charList.get(i).isHair(hair)){
+                charList.remove(i);
+            }
+        }
     }
 
 
