@@ -92,6 +92,15 @@ public class Character {
 
     }
 
+    public boolean isName(String n) {
+        if (n.equals(name)) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
     public String toString() {
         return name;
     }
