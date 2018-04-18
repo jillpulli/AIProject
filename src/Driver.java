@@ -254,6 +254,7 @@ public class Driver {
 
     }
 
+    // Display main menu
     public static void printMenu(){
         System.out.println("Your game options are:");
         System.out.println("1. Ask Question (ends turn)");
@@ -268,9 +269,7 @@ public class Driver {
 
 
 
-
-  
-
+//display list of possible questions that the user can ask the computer
     public static void displayQuestions() {
         System.out.println("1. Is your character male?");
         System.out.println("2. Is your character female?");
