@@ -94,38 +94,6 @@ public class Roster {
 
 
 
-    public void removeCharacterHair(String charhair) {
-        for(int i = 0; i < charList.size(); i++ ){
-            if(!charList.get(i).isHair(charhair)){
-               charList.remove(i);
-            }
-        }
-    }
-
-    public void removeCharacterGender(String chargen) {
-        for(int i = 0; i < charList.size(); i++ ){
-            if(!charList.get(i).isGender(chargen)){
-                charList.remove(i);
-            }
-        }
-    }
-
-    public void removeCharacterShirt(String charshirt) {
-        for(int i = 0; i < charList.size(); i++ ){
-            if(!charList.get(i).isShirt(charshirt)){
-                charList.remove(i);
-            }
-        }
-    }
-
-    public void removeCharacterEye(String chareye) {
-        for(int i = 0; i < charList.size(); i++ ){
-            if(!charList.get(i).isEye(chareye)){
-                charList.remove(i);
-            }
-        }
-    }
-
     public String toString()
     {
         String showItems="";
