@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.Random;
 
+/**
+ * Class AI takes in a Roster of possible
+ */
 public class AI {
     Roster aiRoster;
     HashMap<String,Integer> brain;
@@ -54,6 +57,12 @@ public class AI {
         }
         else {
             return questions.get(0);
+        }
+    }
+
+    public void updateHvals(){
+        for (String key : brain.keySet()) {
+            brain.put(key, brain.get(k) + 1);
         }
     }
 
