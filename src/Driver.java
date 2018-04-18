@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.io.*;
 import java.util.Random;
 
-public class driver {
+public class Driver {
 
     static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
