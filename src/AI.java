@@ -19,15 +19,15 @@ public class AI {
         brain = new HashMap<String, Integer>();
         brain.put("male",0);
         brain.put("female",0);
-        brain.put("Does your character have brown hair?",1);
-        brain.put("Does your character have red hair?",1);
-        brain.put("Does your character have blonde hair?",1);
-        brain.put("Does your character have green eyes?",1);
-        brain.put("Does your character have blue eyes?",1);
-        brain.put("Does your character have brown eyes?",1);
-        brain.put("Is your character wearing a green shirt?",1);
-        brain.put("Is your character wearing a blue shirt?",1);
-        brain.put("Is your character wearing a red shirt?",1);
+        brain.put("brown hair",1);
+        brain.put("red hair",1);
+        brain.put("blonde hair",1);
+        brain.put("green eyes",1);
+        brain.put("blue eyes",1);
+        brain.put("brown eyes",1);
+        brain.put("green shirt",1);
+        brain.put("blue shirt",1);
+        brain.put("red shirt",1);
 
         aiRoster = newRoster;
     }
@@ -93,8 +93,6 @@ public class AI {
     }
 
 
-
-
 	/*
 
 	 * get a character that matches character in question
@@ -108,25 +106,29 @@ public class AI {
         } else
 
         {
-            if (response == 0) {
+            if (response == 1) {
                 if (brain.equals("red shirt")) {
+
                     brain.remove("blue shirt", brain.get("blue shirt"));
                     aiRoster.removeCharWithShirt("blue shirt");
                     brain.remove("green shirt", brain.get("green shirt"));
                     aiRoster.removeCharWithShirt("green shirt");
-                } else if (brain.equals("green shirt")) {
+                }
+                else if (brain.equals("green shirt")) {
+
                     brain.remove("blue shirt", brain.get("blue shirt"));
                     aiRoster.removeCharWithShirt("blue shirt");
                     brain.remove("red shirt", brain.get("red shirt"));
                     aiRoster.removeCharWithShirt("red shirt");
-                } else if (brain.equals("red shirt"))
-
+                }
+                else if (brain.equals("red shirt"))
                 {
                     brain.remove("blue shirt", brain.get("blue shirt"));
                     aiRoster.removeCharWithShirt("blue shirt");
                     brain.remove("green shirt", brain.get("green shirt"));
                     aiRoster.removeCharWithShirt("green shirt");
-                } else if (brain.equals("brown hair")) {
+                }
+                else if (brain.equals("brown hair")) {
                     brain.remove("blonde hair", brain.get("blonde hair"));
                     aiRoster.removeCharWithShirt("blonde hair");
                     brain.remove("red hair", brain.get("red hair"));
@@ -163,9 +165,16 @@ public class AI {
 
                 } else if (brain.equals("female")) {
                     brain.remove("male", brain.get("male"));
+                    aiRoster.removeCharacterGender("male");
+                    brain.remove("female", brain.get("female"));
+                    aiRoster.removeCharWithGender("female");
+
 
                 } else if (brain.equals("male")) {
                     brain.remove("female", brain.get("female"));
+                    aiRoster.removeCharWithGender("female");
+                    brain.remove("male", brain.get("male"));
+                    aiRoster.removeCharacterGender("male");
                 }
 
             } else {
@@ -222,10 +231,12 @@ public class AI {
                 else if (brain.equals("female"))
                 {
                     brain.remove("male", brain.get("male"));
+                    aiRoster.removeCharWithGender("male");
 
                 } else if (brain.equals("male"))
                 {
                     brain.remove("female", brain.get("female"));
+                    aiRoster.removeCharWithGender("female");
                 }
             }
         }
