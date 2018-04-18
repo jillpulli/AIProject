@@ -58,9 +58,12 @@ public class driver {
         System.out.println("You can either guess who the computer has, or ask a question");
         System.out.println("Once you have either made a guess or asked a question, you turn ends and the computer will go");
         System.out.println("Your goal is to guess who the computer has before it guesses your character first!");
-        System.out.println("Good Luck!");
-        
-        
+        System.out.println("Good Luck!\n");
+        System.out.println("\nYour character is: " + people.getChar(userNum).toString());
+
+        System.out.println("//test this is the computer's character//");
+        System.out.println(people.getChar(computerNum).toString());
+
 
 
         while(noWinner) {
@@ -68,11 +71,11 @@ public class driver {
             while(turn) {
 
 
+
                 String s = in.readLine().trim();
                 int i = Integer.parseInt(s);
 
-                String t = in.readLine().trim();
-                int j = Integer.parseInt(s);
+
               //  System.out.print(i);
                // System.out.println("");
 
@@ -80,71 +83,175 @@ public class driver {
             //Ask question
                     case 1:
                         displayQuestions();
+
+                        String t = in.readLine().trim();
+                        int j = Integer.parseInt(t);
+
+                        checkCorrectGuess = false;
                         switch (j) {
                             case 1:
                                 //male?
-                                people.getChar(computerNum).isGender("male");
-                                
+                                if( people.getChar(computerNum).isGender("male"))
+                                 {
+                                    System.out.println("Yes!");
+                                }
+                                else {
+                                    System.out.println("No");
+                                }
+                                //turn = false;
                                 break;
                             case 2:
                                 //female?
+                                if(people.getChar(computerNum).isGender("female"))
+                                {
+                                    System.out.println("Yes!");
+                                }
+                                else {
+                                    System.out.println("No");
+                                }
+                               // turn = false;
                                 break;
                             case 3:
                                 //red hair?
+                                if(people.getChar(computerNum).isHair("brown"))
+                                 {
+                                    System.out.println("Yes!");
+                                }
+                                else {
+                                    System.out.println("No");
+                                }
+                              //  turn = false;
                                 break;
                             case 4:
                                 //brown hair?
-
+                                if(people.getChar(computerNum).isHair("red"))
+                               {
+                                    System.out.println("Yes!");
+                                }
+                                else {
+                                    System.out.println("No");
+                                }
+                              //  turn = false;
                                 break;
                             case 5:
                                 //blonde hair?
+                                if(people.getChar(computerNum).isHair("blonde"))
+                                {
+                                    System.out.println("Yes!");
+                                }
+                                else {
+                                    System.out.println("No");
+                                }
+                              //  turn = false;
                                 break;
                             case 6:
                                 //brown eyes?
+                                if(people.getChar(computerNum).isEye("green"))
+                               {
+                                    System.out.println("Yes!");
+                                }
+                                else {
+                                    System.out.println("No");
+                                }
+                              //  turn = false;
                                 break;
                             case 7:
                                 //green eyes?
+                                if(people.getChar(computerNum).isEye("blue"))
+                                {
+                                    System.out.println("Yes!");
+                                }
+                                else {
+                                    System.out.println("No");
+                                }
+                            //    turn = false;
                                 break;
                             case 8:
                                 //blue eyes?
+                                if(people.getChar(computerNum).isEye("brown"))
+                                {
+                                    System.out.println("Yes!");
+                                }
+                                else {
+                                    System.out.println("No");
+                                }
+                            //    turn = false;
                                 break;
                             case 9:
                                 //green shirt?
+                                if(people.getChar(computerNum).isShirt("green"))
+                                 {
+                                    System.out.println("Yes!");
+
+                                }
+                                else {
+                                    System.out.println("No");
+                                }
+                          //      turn = false;
                                 break;
                             case 10:
                                 //blue shirt?
+                                if(people.getChar(computerNum).isShirt("blue"))
+                                {
+                                    System.out.println("Yes!");
+                                }
+                                else {
+                                    System.out.println("No");
+                                }
+
+                       //         turn = false;
                                 break;
                             case 11:
                                 //red shirt?
-                                break;
+                                if(people.getChar(computerNum).isShirt("red")){
+
+                                    System.out.println("Yes!");
+                                }
+                                else {
+                                    System.out.println("No");
+                                    //         turn = false;
+                                    break;
+                                }
                         }
 
                         break;
             //Guess computer's character
                     case 2:
-
+                    System.out.println("Input the character that you believe the AI has\n First letter capitalized Please :)");
+                        String guess = in.readLine().trim();
+                        if(people.getChar(computerNum).isName(guess)){
+                            System.out.println("Congratulations! You guessed correctly!\n You win!!!\nThanks for Playing :D");
+                            noWinner = false;
+                        }
+                        else {
+                            System.out.println("No, try again.");
+                        }
                         break;
             //See list of playable characters
+
                     case 3:
+                        System.out.println(people.toString());
 
                         break;
             //see ALL characters' attributes
                     case 4:
-
+                        System.out.println(people.getAttributes());
                         break;
             //See User's character and their attributes
                     case 5:
-
+                        System.out.println(people.getMyCharacter());
                         break;
             //Quit game
                     case 6:
                         System.out.println("Goodbye!");
+                        turn = false;
                         noWinner = false;
                         break;
 
                 }
             }
         }
+
     }
 
     public static void printMenu(){
@@ -159,27 +266,10 @@ public class driver {
     }
 
 
-    //option 3
-    // returns toString of all playable characters
-    public static String displayCharacters(Roster temp){
-        return temp.toString();
-    }
 
-    //option 4
-    // returns a String concactinated of all attributes
-    //use system.out.print when calling method
-    public static String displayAttributes(Roster temp) {
 
-        return temp.getAttributes();
-    }
 
-    //option 5
-    //returns a String of Player's character name with attributes
-    //use system.out.print when calling method
-    public static String displayMyAtttributes(Roster temp) {
-
-        return temp.getMyCharacter();
-    }
+  
 
     public static void displayQuestions() {
         System.out.println("1. Is your character male?");
