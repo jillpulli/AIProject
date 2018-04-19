@@ -1,5 +1,13 @@
 package src;
 
+/**
+ * Class Character stores all of the characteristics of each individual character.
+ * Contains appropriate getters and setters for each of the traits,
+ * as well boolean checks for the AI to use.
+ *
+ * @author Curtis Baillie
+ * @date 04.16.18
+ */
 public class Character {
 
     private String hair;
@@ -56,6 +64,7 @@ public class Character {
         return name;
     }
 
+    //Returns true if character has specific hair color
     public boolean isHair(String h) {
         if (h.equals(hair)) {
             return true;
@@ -64,7 +73,7 @@ public class Character {
         }
 
     }
-
+    //Returns true if character has specific eye color
     public boolean isEye(String e) {
         if (e.equals(eye)) {
             return true;
@@ -73,7 +82,7 @@ public class Character {
         }
 
     }
-
+    //Returns true if character has specific shirt color
     public boolean isShirt(String s) {
         if (s.equals(shirt)) {
             return true;
@@ -83,6 +92,7 @@ public class Character {
 
     }
 
+    //Returns true if character has specific gender
     public boolean isGender(String g) {
         if (g.equals(gender)) {
             return true;
@@ -92,6 +102,7 @@ public class Character {
 
     }
 
+    //Returns true if character has specific name
     public boolean isName(String n) {
         if (n.equals(name)) {
             return true;

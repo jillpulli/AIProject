@@ -1,6 +1,18 @@
+/**
+    Class Roster organizes the characters into an ArrayList
+    It has methods to use functions for the ArrayList outside of the class,
+    methods to remove/access characters with specific traits (for AI)
+    and print methods to display character attributes
+
+  @author Rebecca Hedum
+  @date 04.16.18
+
+ **/
+
 package src;
 
 import java.util.ArrayList;
+
 
 public class Roster {
 
@@ -24,6 +36,8 @@ public class Roster {
         charList.remove(ch);
     }
 
+    //Remove all characters with specific shirt color
+
     public void removeCharWithShirt(String shirt){
         for (int i = 0; i < charList.size(); i++) {
             if(charList.get(i).isShirt(shirt)){
@@ -31,6 +45,7 @@ public class Roster {
             }
         }
     }
+    //Remove all characters with specific gender
 
     public void removeCharWithGender(String gender){
         for (int i = 0; i < charList.size(); i++) {
@@ -40,6 +55,8 @@ public class Roster {
         }
     }
 
+    //Remove all character with specific eye color
+
     public void removeCharWithEyes(String eyes){
         for (int i = 0; i < charList.size(); i++) {
             if(charList.get(i).isEye(eyes)){
@@ -47,6 +64,7 @@ public class Roster {
             }
         }
     }
+    //Remove all characters with specific hair color
 
     public void removeCharWithHair(String hair){
         for (int i = 0; i < charList.size(); i++) {

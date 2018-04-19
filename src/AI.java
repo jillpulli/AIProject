@@ -1,3 +1,13 @@
+/**
+ * Class AI controls all AI functionality
+ * It creates its own version of Roster, stores a
+ * list of questions in a HashMap, and performs mathematical calculations
+ * to calculate heuristic values and updates the values and lists accordingly
+ *
+ * @Jill Pulicicchio
+ * @date: 04.16.18
+ */
+
 package src;
 
 import java.util.HashMap;
@@ -8,7 +18,7 @@ import java.util.Set;
 import java.util.Random;
 
 /**
- * Class AI takes in a Roster of possible
+ * Class AI takes in a co
  */
 public class AI {
     Roster aiRoster;
@@ -62,7 +72,7 @@ public class AI {
             return questions.get(0);
         }
     }
-
+// Updates heuristic values of each item in the HashMap
     public void updateHvals(){
         for (String key : brain.keySet()) {
             Integer oldVal = brain.get(key);
@@ -71,6 +81,7 @@ public class AI {
         }
     }
 
+    //Used for testing purposes
     public void testHash() {
         System.out.println("Before removal");
         for( String s : brain.keySet() ) {
@@ -78,33 +89,16 @@ public class AI {
         }
     }
 
-    public void setupAI() {
-        //Gameboard setup
-        //Make characters
-        Character Jill = new Character("red", "brown:", "female", "green", "Jill");
-        Character Sean = new Character("red", "green", "male", "green", "Sean");
-        Character Becky = new Character("brown", "brown", "female", "blue", "Becky");
-        Character Tom = new Character("brown", "green", "male", "blue", "Tom");
-        Character Caroline = new Character("blonde", "blue", "female", "blue", "Caroline");
-        Character Curtis = new Character("brown", "blue", "male", "red", "Curtis");
-        Character Steph = new Character("brown", "brown", "female", "red", "Steph");
 
-        //Add characters to ArrayList
-        Roster people = new Roster();
-        people.addChar(Jill);
-        people.addChar(Sean);
-        people.addChar(Becky);
-        people.addChar(Tom);
-        people.addChar(Caroline);
-        people.addChar(Curtis);
-        people.addChar(Steph);
-        AI ai = new AI(people);
-        String lowest = ai.bestQuestion();
-       // System.out.println(lowest);
-    }
     
 	/*
-	 * get a character that matches character in question
+	 * Compare question asked to questions stored in HashMap
+	 * If user answers 'yes' to AI, all three possible questions
+	 * in the same category are removed from the HashMap
+	 * and the unrelated characters are removed from aiRoster.
+	 *
+	 * If the user answers 'no' just the question asked is
+	 * removed along with the related character
 	 */
 
     public void activateBrain(int response, String quest) {

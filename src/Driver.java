@@ -1,3 +1,11 @@
+/**
+ *  Class Driver is the main class that initializes characters with their attributes
+ *  and controls all interaction between the user and AI
+ *
+ * @author: Rebecca Hedum
+ * @date: 04.16.18
+ */
+
 package src;
 
 import java.util.ArrayList;
@@ -7,8 +15,6 @@ import java.util.Random;
 public class Driver {
 
     static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-
-
 
     public static void main(String args[]) throws IOException {
         //Gameboard setup
@@ -86,8 +92,6 @@ public class Driver {
                 int i = Integer.parseInt(s);
 
 
-                //  System.out.print(i);
-                // System.out.println("");
 
                 switch (i) {
                     //Ask question
@@ -201,6 +205,7 @@ public class Driver {
                                     turn = false;
                                     break;
                                 }
+                                default:System.out.println("Please enter a valid number");
                         }
 
                         break;
@@ -235,12 +240,12 @@ public class Driver {
                         turn = false;
                         noWinner = false;
                         break;
-
+                    default:System.out.println("Please enter a valid number");
                 }
             } while (turn);
 
             //AI takes turn
-            //check for highest h value in Hashmap to ask question
+            //check for lowest h value in Hashmap to ask question
             //If yes, remove appropriate characters from aiRoster
             //Delete question from Hashmap
             //get traits from remaining characters and update question values
@@ -253,17 +258,26 @@ public class Driver {
                 }
                 else {
                     String quest = aibot.bestQuestion();
-                    System.out.println("Is " + quest + " true?" + "\nType '1' for yes and '0' for no");
+                    System.out.println("Is " + quest + " true?" + "\nType '1' for yes, '0' for no, and 2 to see your Character's attributes");
 
-                    q = in.readLine().trim();
-                    answer = Integer.parseInt(q);
+                    do {
+                        q = in.readLine().trim();
+                        answer = Integer.parseInt(q);
 
-                    if (answer == 1) {
-                        aibot.activateBrain(1,quest);
-                    } else {
-                        aibot.activateBrain(0,quest);
-                    }
-                    turn = true;
+
+                        if (answer == 1) {
+                            aibot.activateBrain(1, quest);
+                            turn = true;
+                        } else if (answer == 0) {
+                            aibot.activateBrain(0, quest);
+                            turn = true;
+                        } else if(answer == 2){
+                            System.out.println(people.getMyCharacter(userNum));
+                        }
+                        else {
+                            System.out.println("Please enter a '1' or '0' to answer");
+                        }
+                    } while(turn == false);
 
                 }
 
@@ -281,7 +295,7 @@ public class Driver {
         System.out.println("6. Quit Game");
 
     }
-    
+
 
 //display list of possible questions that the user can ask the computer
     public static void displayQuestions() {
