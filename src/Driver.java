@@ -79,8 +79,8 @@ public class Driver {
         System.out.println("Good Luck!\n");
         System.out.println("\nYour character is: " + people.getChar(userNum).toString());
 
-        System.out.println("//test this is the computer's character//");
-        System.out.println(people.getChar(computerNum).toString());
+        //System.out.println("//test this is the computer's character//");
+        //System.out.println(people.getChar(computerNum).toString());
 
 
         while (noWinner) {
