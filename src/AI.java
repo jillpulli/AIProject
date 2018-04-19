@@ -1,13 +1,3 @@
-/**
- * Class AI controls all AI functionality
- * It creates its own version of Roster, stores a
- * list of questions in a HashMap, and performs mathematical calculations
- * to calculate heuristic values and updates the values and lists accordingly
- *
- * @Jill Pulicicchio
- * @date: 04.16.18
- */
-
 package src;
 
 import java.util.HashMap;
@@ -18,7 +8,13 @@ import java.util.Set;
 import java.util.Random;
 
 /**
- * Class AI takes in a co
+ * Class AI controls all AI functionality
+ * It creates its own version of Roster, stores a
+ * list of questions in a HashMap, and performs mathematical calculations
+ * to calculate heuristic values and updates the values and lists accordingly
+ *
+ * @Jill Pulicicchio
+ * @date: 04.16.18
  */
 public class AI {
     Roster aiRoster;
