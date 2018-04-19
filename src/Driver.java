@@ -238,19 +238,27 @@ public class Driver {
             //get traits from remaining characters and update question values
             //If no, do same, but with opposite answers
             if (turn == false) {
-                System.out.println("Is " + aibot.bestQuestion() + " true?" + "\nType '1' for yes and '0' for no");
 
-                q = in.readLine().trim();
-                answer = Integer.parseInt(q);
-
-
-
-                if (answer == 1) {
-                    aibot.activateBrain(1);
-                } else {
-                    aibot.activateBrain(0);
+                if (aibot.aiRoster.getSize() == 1) {
+                    System.out.println("Your character is " + aibot.aiRoster.getChar(0));
+                    noWinner = false;
                 }
-                turn = true;
+                else {
+                    String quest = aibot.bestQuestion();
+                    System.out.println("Is " + quest + " true?" + "\nType '1' for yes and '0' for no");
+
+                    q = in.readLine().trim();
+                    answer = Integer.parseInt(q);
+
+
+                    if (answer == 1) {
+                        aibot.activateBrain(1,quest);
+                    } else {
+                        aibot.activateBrain(0,quest);
+                    }
+                    turn = true;
+
+                }
 
             }
         }
