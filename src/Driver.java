@@ -285,7 +285,4 @@ public class Driver {
         System.out.println("11. Is your character wearing a red shirt?");
     }
 
-
-
-
 }
