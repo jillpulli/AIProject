@@ -32,7 +32,15 @@ public class Driver {
         people.addChar(Steph);
 
         //create AI Object and copy Roster
-        AI aibot = new AI(people);
+        Roster possChars = new Roster();
+        possChars.addChar(Jill);
+        possChars.addChar(Sean);
+        possChars.addChar(Becky);
+        possChars.addChar(Tom);
+        possChars.addChar(Caroline);
+        possChars.addChar(Curtis);
+        possChars.addChar(Steph);
+        AI aibot = new AI(possChars);
 
         //create gameplay loop
         boolean noWinner = true;
@@ -219,7 +227,7 @@ public class Driver {
                         break;
                     //See User's character and their attributes
                     case 5:
-                        System.out.println(people.getMyCharacter());
+                        System.out.println(people.getMyCharacter(userNum));
                         break;
                     //Quit game
                     case 6:
@@ -250,7 +258,6 @@ public class Driver {
                     q = in.readLine().trim();
                     answer = Integer.parseInt(q);
 
-
                     if (answer == 1) {
                         aibot.activateBrain(1,quest);
                     } else {
@@ -274,9 +281,7 @@ public class Driver {
         System.out.println("6. Quit Game");
 
     }
-
-
-
+    
 
 //display list of possible questions that the user can ask the computer
     public static void displayQuestions() {

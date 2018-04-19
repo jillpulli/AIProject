@@ -81,14 +81,10 @@ public class Roster {
         return attributes;
     }
     //get attributes of Player's character
-    public String getMyCharacter() {
-        String myChar = "";
-        for(int i = 0; i< charList.size(); i++) {
+    public String getMyCharacter(int i) {
+       String myChar = "";
+        myChar += charList.get(i).getName() + " has attributes: " + "eye color " + charList.get(i).getEye() + ", hair color: " + charList.get(i).getHair() + ", shirt color: " + charList.get(i).getShirt() + ", and gender: " + charList.get(i).getGender() + "\n";
 
-            if(charList.get(i).isMyCharacter()){
-                myChar += charList.get(i).getName() + " has attributes: " + "eye color " + charList.get(i).getEye() + ", hair color: " + charList.get(i).getHair() + ", shirt color: " + charList.get(i).getShirt() + ", and gender: " + charList.get(i).getGender() + "\n";
-            }
-        }
         return myChar;
     }
 
