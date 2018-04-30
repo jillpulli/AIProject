@@ -77,15 +77,6 @@ public class AI {
         }
     }
 
-    //Used for testing purposes
-    public void testHash() {
-        System.out.println("Before removal");
-        for( String s : brain.keySet() ) {
-            System.out.println( s );
-        }
-    }
-
-
     
 	/*
 	 * Compare question asked to questions stored in HashMap
@@ -271,11 +262,13 @@ public class AI {
                 else if (quest.equals("female"))
                 {
                     brain.remove("female");
+                    brain.remove("male");
                     aiRoster.removeCharWithGender("female");
 
                 } else if (quest.equals("male"))
                 {
                     brain.remove("male");
+                    brain.remove("female");
                     aiRoster.removeCharWithGender("male");
                 }
             }
@@ -283,6 +276,4 @@ public class AI {
         updateHvals();
         questions.clear();
     }
-
-
 }

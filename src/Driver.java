@@ -86,12 +86,8 @@ public class Driver {
         while (noWinner) {
             printMenu();
             do {
-
-
                 String s = in.readLine().trim();
                 int i = Integer.parseInt(s);
-
-
 
                 switch (i) {
                     //Ask question
@@ -205,7 +201,7 @@ public class Driver {
                                     turn = false;
                                     break;
                                 }
-                                default:System.out.println("Please enter a valid number");
+                            default:System.out.println("Please enter a valid number");
                         }
 
                         break;
