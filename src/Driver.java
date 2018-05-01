@@ -198,9 +198,9 @@ public class Driver {
                                     System.out.println("Yes!");
                                 } else {
                                     System.out.println("No");
-                                    turn = false;
-                                    break;
                                 }
+                                turn = false;
+                                break;
                             default:System.out.println("Please enter a valid number");
                         }
 
