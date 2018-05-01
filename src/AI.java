@@ -196,6 +196,8 @@ public class AI {
 
                     brain.remove("female");
 
+                    //no females have green eyes
+                    brain.remove("green eyes");
 
 
                 } else if (quest.equals("male")) {
@@ -204,6 +206,9 @@ public class AI {
                     aiRoster.removeCharWithGender("female");
 
                     brain.remove("male");
+
+                    //no males have blonde hair
+                    brain.remove("blonde hair");
 
                 }
 
@@ -265,11 +270,17 @@ public class AI {
                     brain.remove("male");
                     aiRoster.removeCharWithGender("female");
 
+                    //no males have blonde hair
+                    brain.remove("blonde hair");
+
                 } else if (quest.equals("male"))
                 {
                     brain.remove("male");
                     brain.remove("female");
                     aiRoster.removeCharWithGender("male");
+
+                    //no females have green eyes
+                    brain.remove("green eyes");
                 }
             }
 
