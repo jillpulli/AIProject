@@ -123,7 +123,7 @@ public class AI {
                 else if (quest.equals("brown hair")) {
 
                     brain.remove("brown hair");
-              //      aiRoster.removeCharWithShirt("brown");
+              //    aiRoster.removeCharWithShirt("brown");
 
 
                     brain.remove("blonde hair");
@@ -196,7 +196,7 @@ public class AI {
 
                     brain.remove("female");
 
-                    //no females have green eyes
+                    // No females have green eyes
                     brain.remove("green eyes");
 
 
